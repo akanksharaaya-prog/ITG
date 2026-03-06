@@ -20,3 +20,5 @@ public class Factorial{
 		System.out.println("factorial of "+num+ " is = " + factorial);
 	}
 }
+
+6 March 2026
