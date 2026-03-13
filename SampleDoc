@@ -1,3 +1,21 @@
 This the sample document for demo purpose
 Adding the new changes
 Added.
+public class MethodParameterExample {
+	
+	    void printName(String name) {
+	        System.out.println(name);
+	    }
+	    void number(int num) {
+	    	System.out.println(num);
+	    }
+	    public static void main(String[] args) {
+	        MethodParameterExample obj = new MethodParameterExample();
+	        obj.printName("Radha555");
+	        obj.number(10);
+	   		syso111111111111111111111
+
+	       5 march 1.50 pm 
+
+	    }
+	}
