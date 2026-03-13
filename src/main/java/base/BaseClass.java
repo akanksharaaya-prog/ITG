@@ -19,7 +19,7 @@ public class BaseClass {
         driverFactory = new DriverFactory();
         driver = driverFactory.initializeDriver(configReader.getProperty("browser"));
         driver.manage().window().maximize();
-        driver.get(configReader.getProperty("url"));
+      //  driver.get(configReader.getProperty("url"));
     }
 
     @AfterMethod
