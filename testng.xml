@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/rsvis/ITG/src/test/java/tests">
+    <test verbose="2" preserve-order="true" name="Login Tests">
         <classes>
             <class name="tests.LoginTestHRM">
                 <methods>
