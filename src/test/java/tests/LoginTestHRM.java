@@ -16,7 +16,6 @@ public class LoginTestHRM extends BaseClass {
     @Test
     public void testValidLogin() {
         System.out.println(">>> Starting test: testValidLogin");
-
         driver.get(configReader.getProperty("urlHrm"));
         LoginPageHRM loginPagehrm = new LoginPageHRM(driver, Integer.parseInt(configReader.getProperty("timeout")));
         loginPagehrm.enterEmail(configReader.getProperty("emailHrm"));

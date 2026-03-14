@@ -17,6 +17,16 @@
                     <include name="testValidLogin"/>
                 </methods>
             </class>
+            <class name="tests.LogoutTestHRM">
+                <methods>
+                    <include name="testValidLogoutHRM"/>
+                </methods>
+            </class>
+            <class name="tests.LoginTestAPForm">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
