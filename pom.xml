@@ -131,17 +131,29 @@
     </dependencies>
     <build>
         <plugins>
-            <!-- Surefire plugin to run TestNG suite -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <!-- Point to your TestNG suite file -->
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+
+                    <!-- Default Surefire reports -->
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    <useFile>true</useFile>
+                    <testFailureIgnore>false</testFailureIgnore>
+
+                    <!-- Allure integration -->
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 
