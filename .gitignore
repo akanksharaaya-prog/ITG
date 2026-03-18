@@ -1,0 +1,13 @@
+# Ignore system folders
+AppData/
+*.log
+*.tmp
+
+# Ignore Eclipse files
+.metadata/
+*.class
+bin/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
