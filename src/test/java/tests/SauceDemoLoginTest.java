@@ -1,14 +1,14 @@
 package tests;
 
 import base.BaseClass;
-import listeners.TestListeners;
+//import listeners.TestListeners;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.SauceDemoLoginPage;
 
 
-@Listeners(TestListeners.class) 
+//@Listeners(TestListeners.class) 
 public class SauceDemoLoginTest extends BaseClass {
 
     @Test

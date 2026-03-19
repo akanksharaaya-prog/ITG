@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 
 import base.BaseClass;
-import listeners.TestListeners;
+
 import pages.LoginpageAPForm;
 
-@Listeners(TestListeners.class)
+
 public class LoginTestAPForm extends BaseClass  {
 
    // @BeforeMethod
