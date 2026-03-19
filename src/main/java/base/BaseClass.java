@@ -1,8 +1,11 @@
 package base;
 
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import listeners.TestListeners;
 import util.ConfigReader;
 import util.DriverFactory;
 
@@ -20,6 +23,14 @@ public class BaseClass {
         driver = driverFactory.initializeDriver(configReader.getProperty("browser"));
         driver.manage().window().maximize();
       //  driver.get(configReader.getProperty("url"));
+        
+        // ✅ Pass driver to listener
+       
+     // ✅ Pass driver to listener
+        TestListeners.setDriver(driver);
+
+
+        
     }
 
     @AfterMethod
