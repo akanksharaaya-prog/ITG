@@ -21,10 +21,5 @@ public class GooglePage {
 		wait.waitForVisibility(searchbox).sendKeys(search);
 		wait.waitForVisibility(searchBtn).click();	
 	}
-	public void playsong() {
-		wait.waitForVisibility(clickonsong).click();
-	}
-	public void skipadd() {
-		wait.waitForVisibility(skipbutn).click();
-	}
+	
 }
