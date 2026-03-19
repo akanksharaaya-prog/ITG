@@ -1,6 +1,4 @@
-# IntelliJ IDEA
-*.iml
-.idea/
-
-# Build output
-/target/
+test-output/
+allure-results/
+Screenshots/
+target/

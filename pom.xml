@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
@@ -14,6 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- ✅ Only one dependencies block -->
     <dependencies>
         <!-- Selenium WebDriver -->
         <dependency>
@@ -22,8 +25,7 @@
             <version>4.29.0</version>
         </dependency>
 
-        <!-- WebDriverManager (auto driver binaries) -->
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -38,7 +40,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Logging (Log4j2) -->
+        <!-- Logging -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -50,14 +52,14 @@
             <version>2.24.3</version>
         </dependency>
 
-        <!-- Reporting (ExtentReports) -->
+        <!-- ExtentReports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>5.1.2</version>
         </dependency>
 
-        <!-- API Testing (RestAssured + JSON Schema Validator) -->
+        <!-- RestAssured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -70,7 +72,7 @@
             <version>5.5.0</version>
         </dependency>
 
-        <!-- JSON Handling -->
+        <!-- JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -82,7 +84,7 @@
             <version>20240303</version>
         </dependency>
 
-        <!-- Data Handling (Excel, IO) -->
+        <!-- Apache POI -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -93,19 +95,24 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.4.0</version>
         </dependency>
+
+        <!-- Commons IO -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.19.0</version>
         </dependency>
 
-        <!-- Database (MySQL Connector) -->
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>9.1.0</version>
         </dependency>
 
+<<<<<<< HEAD
+        <!-- Hamcrest -->
+=======
         <!-- io.qameta.allure/allure-testng -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -116,6 +123,7 @@
 
 
         <!-- Hamcrest (assertions) -->
+>>>>>>> e9e9e1e191c5681cf454e795645a074749b8b2d3
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -123,7 +131,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Lombok (optional, for cleaner POJOs) -->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -131,13 +139,44 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- ✅ Allure TestNG adapter -->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            <scope>compile</scope>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.21.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.sample</groupId>
+        	<artifactId>mavensimple</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+<<<<<<< HEAD
+<build>
+    <plugins>
+        <!-- Surefire plugin to run TestNG suite -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+
+        <!-- Allure Maven plugin -->
+        <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <version>2.11.2</version>
+        </plugin>
+    </plugins>
+</build>
+          
+
+=======
     <build>
         <plugins>
             <plugin>
@@ -165,5 +204,6 @@
 
         </plugins>
     </build>
+>>>>>>> e9e9e1e191c5681cf454e795645a074749b8b2d3
 
 </project>
