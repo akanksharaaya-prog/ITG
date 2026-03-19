@@ -110,7 +110,20 @@
             <version>9.1.0</version>
         </dependency>
 
+<<<<<<< HEAD
         <!-- Hamcrest -->
+=======
+        <!-- io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.29.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <!-- Hamcrest (assertions) -->
+>>>>>>> e9e9e1e191c5681cf454e795645a074749b8b2d3
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -138,6 +151,7 @@
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+<<<<<<< HEAD
 <build>
     <plugins>
         <!-- Surefire plugin to run TestNG suite -->
@@ -162,5 +176,34 @@
 </build>
           
 
+=======
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <!-- Point to your TestNG suite file -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <!-- Default Surefire reports -->
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    <useFile>true</useFile>
+                    <testFailureIgnore>false</testFailureIgnore>
+
+                    <!-- Allure integration -->
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+>>>>>>> e9e9e1e191c5681cf454e795645a074749b8b2d3
 
 </project>
