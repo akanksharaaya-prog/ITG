@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import listeners.TestListeners;
+
 import util.ConfigReader;
 import util.DriverFactory;
 
@@ -26,8 +26,7 @@ public class BaseClass {
         
         // ✅ Pass driver to listener
        
-     // ✅ Pass driver to listener
-        TestListeners.setDriver(driver);
+     
 
 
         

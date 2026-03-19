@@ -1,7 +1,7 @@
 package tests;
 
 import base.BaseClass;
-import listeners.TestListeners;
+//import listeners.TestListeners;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 import pages.LogoutHRM;
 
-@Listeners(TestListeners.class) 
+//@Listeners(TestListeners.class) 
 public class LogoutTestHRM extends BaseClass {
 
 

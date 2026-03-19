@@ -1,7 +1,7 @@
 package tests;
 
 import base.BaseClass;
-import listeners.TestListeners;
+//import listeners.TestListeners;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ import pages.LoginPageHRM;
 
 import java.time.Duration;
  
-@Listeners(TestListeners.class) 
+//@Listeners(TestListeners.class) 
 public class LoginTestHRM extends BaseClass {
 
     
