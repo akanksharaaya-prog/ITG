@@ -1,22 +1,39 @@
 package tests;
 
 import base.BaseClass;
-//import listeners.TestListeners;
-
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.SauceLabLogin;
+import util.ScreenshotUtil;
 
-//@Listeners(TestListeners.class) 
 public class SauceLabLoginTest extends BaseClass {
 
     @Test
     public void testValidLogin() {
-        driver.get(configReader.getProperty("urlSauceLab"));
-        SauceLabLogin sauceLabLogin = new SauceLabLogin(driver, Integer.parseInt(configReader.getProperty("timeout")));
-        sauceLabLogin.enterUsername(configReader.getProperty("usernameSauceLab"));
-        sauceLabLogin.enterPassword(configReader.getProperty("passwordSauceLab"));
-        sauceLabLogin.clickLogin();
-    }
 
+        String testName = "testValidLogin_SauceLab";
+
+        try {
+
+            driver.get(configReader.getProperty("urlSauceLab"));
+
+            SauceLabLogin sauceLabLogin = new SauceLabLogin(
+                driver,
+                Integer.parseInt(configReader.getProperty("timeout"))
+            );
+
+            sauceLabLogin.enterUsername(configReader.getProperty("usernameSauceLab"));
+            sauceLabLogin.enterPassword(configReader.getProperty("passwordSauceLab"));
+            sauceLabLogin.clickLogin();
+
+            // ✅ PASS Screenshot
+            ScreenshotUtil.captureScreenshot(driver, testName + "_PASS");
+
+        } catch (Exception e) {
+
+            // ❌ FAIL Screenshot
+            ScreenshotUtil.captureScreenshot(driver, testName + "_FAIL");
+
+            throw e;
+        }
+    }
 }
