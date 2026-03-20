@@ -1,32 +1,42 @@
 package tests;
 
 import base.BaseClass;
-//import listeners.TestListeners;
-
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-
 import pages.LogoutHRM;
+import util.ScreenshotUtil;
 
-//@Listeners(TestListeners.class) 
 public class LogoutTestHRM extends BaseClass {
-
 
     @Test(description = "Valid logout from HRM application")
     public void testValidLogoutHRM() {
 
-        driver.get(configReader.getProperty("urlHrm"));
+        String testName = "testValidLogoutHRM";
 
-        LogoutHRM logoutHRM = new LogoutHRM(
-            driver, 
-            Integer.parseInt(configReader.getProperty("timeout"))
-        );
+        try {
 
-        logoutHRM.enterEmail(configReader.getProperty("emailHrm"));
-        logoutHRM.enterPassword(configReader.getProperty("passwordHrm"));
-        logoutHRM.loginButton();
-        logoutHRM.profileTabBtn();
-        logoutHRM.signoutTab();
+            driver.get(configReader.getProperty("urlHrm"));
+
+            LogoutHRM logoutHRM = new LogoutHRM(
+                driver,
+                Integer.parseInt(configReader.getProperty("timeout"))
+            );
+
+            logoutHRM.enterEmail(configReader.getProperty("emailHrm"));
+            logoutHRM.enterPassword(configReader.getProperty("passwordHrm"));
+            logoutHRM.loginButton();
+
+            logoutHRM.profileTabBtn();
+            logoutHRM.signoutTab();
+
+            // ✅ PASS Screenshot (after logout success)
+            ScreenshotUtil.captureScreenshot(driver, testName + "_PASS");
+
+        } catch (Exception e) {
+
+            // ❌ FAIL Screenshot
+            ScreenshotUtil.captureScreenshot(driver, testName + "_FAIL");
+
+            throw e;
+        }
     }
 }
