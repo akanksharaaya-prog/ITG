@@ -22,20 +22,13 @@ public class BaseClass {
         driverFactory = new DriverFactory();
         driver = driverFactory.initializeDriver(configReader.getProperty("browser"));
         driver.manage().window().maximize();
-      //  driver.get(configReader.getProperty("url"));
-        
-        // ✅ Pass driver to listener
-       
-     
-
-
-        
+      
     }
 
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+//            driver.quit();
         }
     }
 

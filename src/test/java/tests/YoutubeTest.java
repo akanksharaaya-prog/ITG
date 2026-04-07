@@ -23,7 +23,7 @@ public class YoutubeTest extends BaseClass {
 
             youtube.searchSong(configReader.getProperty("song"));
             youtube.playsong();
-            youtube.skipadd();
+
 
             // ✅ PASS Screenshot
             ScreenshotUtil.captureScreenshot(driver, testName + "_PASS");
